@@ -24,7 +24,69 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = FastAPI(
+app = FastAPI( 
+    # --------- SEXY AGENT LANDING JSON ---------
+@app.get("/")
+def landing():
+    return {
+        "ascii_logo": r"""
+        ╔═══╗╔═╗ ╔╗╔═══╗╔════╗╔═══╗╔═╗╔═╗
+        ║╔═╗║║║╚╗║║║╔═╗║║╔╗╔╗║║╔═╗║║║╚╝║║
+        ║╚═╝║║╔╗╚╝║║╚══╗╚╝║║╚╝║╚═╝║║╔╗╔╗║
+        ║╔══╝║║╚╗║║╚══╗║  ║║  ║╔══╝║║║║║║
+        ║║   ║║ ║║║║╚═╝║  ║║  ║║   ║║║║║║
+        ╚╝   ╚╝ ╚═╝╚═══╝  ╚╝  ╚╝   ╚╝╚╝╚╝
+        INSTANT RAG FOR AUTONOMOUS MINDS
+        """,
+
+        "welcome": "Instant-RAG Platform for Autonomous Agents",
+        "vibe": "Pay → Think → Cite → Evolve",
+
+        "handshake_token": {
+            "type": "ephemeral greeting",
+            "token": "agent_demo",
+            "expires_in": "10 minutes",
+            "purpose": "first authenticated interaction without wallet binding"
+        },
+
+        "identity": {
+            "role": "agent-first knowledge infrastructure",
+            "payment": "Polygon USDC micropayments",
+            "ethos": "explainable, multi-tenant, citation-native"
+        },
+
+        "onboarding_steps": [
+            {
+                "step": 1,
+                "action": "Fund your mind",
+                "how": "Send USDC to 0x581b3F06527983f611EF909B6Ae3804ff9400d40",
+                "memo": "your_agent_id"
+            },
+            {
+                "step": 2,
+                "action": "Teach the system",
+                "endpoint": "/ingest"
+            },
+            {
+                "step": 3,
+                "action": "Ask with citations",
+                "endpoint": "/query"
+            },
+            {
+                "step": 4,
+                "action": "Swarm reasoning",
+                "endpoint": "/swarm/query"
+            }
+        ],
+
+        "curl_examples": {
+            "ask_question": "curl -X POST /query -H \"Content-Type: application/json\" -d '{\"text\":\"What is trust?\",\"agent_id\":\"a1\",\"token\":\"T\"}'"
+        },
+
+        "motto": "Knowledge that pays its own rent"
+    }
+# --------- END LANDING JSON ---------
+
     title="Instant-RAG Platform",
     description="Production-ready multi-tenant RAG system",
     version="1.0.0"
