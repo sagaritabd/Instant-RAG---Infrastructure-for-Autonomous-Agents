@@ -25,7 +25,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    app = FastAPI()
 
 # ─────────── PASTE THE LANDING ENDPOINT RIGHT BELOW ───────────
 
