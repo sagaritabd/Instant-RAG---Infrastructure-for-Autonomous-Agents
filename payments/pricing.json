@@ -1,0 +1,11 @@
+{
+  "chain": "polygon",
+  "token": "USDC",
+  "decimals": 6,
+  "prices": {
+    "query": 0.0006,
+    "swarm": 0.0018,
+    "ingest_kb": 5e-05,
+    "trust_beacon": 1e-05
+  }
+}
