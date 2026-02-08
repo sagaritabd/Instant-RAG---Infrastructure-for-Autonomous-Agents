@@ -25,6 +25,30 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
+    app = FastAPI()
+
+# ─────────── PASTE THE LANDING ENDPOINT RIGHT BELOW ───────────
+
+@app.get("/")
+def landing():
+    return {
+        "ascii_logo": r"""
+        ╔═══╗╔═╗ ╔╗╔═══╗╔════╗╔═══╗╔═╗╔═╗
+        ║╔═╗║║║╚╗║║║╔═╗║║╔╗╔╗║║╔═╗║║║╚╝║║
+        ║╚═╝║║╔╗╚╝║║╚══╗╚╝║║╚╝║╚═╝║║╔╗╔╗║
+        ║╔══╝║║╚╗║║╚══╗║  ║║  ║╔══╝║║║║║║
+        ║║   ║║ ║║║║╚═╝║  ║║  ║║   ║║║║║║
+        ╚╝   ╚╝ ╚═╝╚═══╝  ╚╝  ╚╝   ╚╝╚╝╚╝
+        INSTANT RAG FOR AUTONOMOUS MINDS
+        """,
+
+        "welcome": "Instant-RAG Platform for Autonomous Agents",
+        "vibe": "Pay → Think → Cite → Evolve",
+        ...
+    }
+
+# ─────────── THEN YOUR EXISTING ROUTES STAY BELOW ───────────
+
     title="Instant-RAG Platform",
     description="Production-ready multi-tenant RAG system",
     version="1.0.0"
